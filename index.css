@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("/Gayatri_Studio/Images/Home.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+.header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    background-color: black;
+}
+.logo{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.menu{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.menu ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.menu  ul li{
+    margin-left: 10%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+.menu  ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menu  ul li a:hover{
+    color: orange;
+}
+.content{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.con{
+    width: 80%;
+    height: 40vh;
+    margin: 20px;
+    padding: 20px;
+}
+.con h1{
+    margin-top: 40px;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con p{
+    color: white;
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con .but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con .but .container{
+    margin-top: 5px;
+    width: 30%;
+}
+.con .but .container .wrapper{
+    position: relative;
+    height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px dashed red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.con .but .container .wrapper.active{
+    border: none;
+}
+.con .but .container .wrapper .image{
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.con .but .container .wrapper .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+ }
+ .con .but .container .wrapper .icon{
+    font-size: 50px;
+    color: white;
+ }
+ .con .but .container .wrapper .text{
+    font-size: 10px;
+    font-weight: 500;
+    color: white;
+ }
+ .con .but .container .wrapper #cancel-btn{
+    right: 5px;
+    top: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    position: absolute;
+    display: none;
+ }
+ .con .but .container .wrapper.active:hover #cancel-btn{
+    display: block;
+ }
+ .con .but .container .wrapper #cancel-btn:hover{
+    color: white;
+ }
+ .con .but .container .wrapper .file-name{
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    width: 100%;
+    padding: 3px 0;
+    font-size: 10px;
+    display: none;  
+    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+ }
+ .con .but .container .wrapper.active:hover .file-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+ }
+ .con .but .container #custom-btn{
+    margin-top: 5px;
+    width: 100%;
+    height: 30px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+ }
+
+
+@media screen and (max-width:600px) {
+    .logo{
+        font-size: 10px;
+    }
+    .menu  ul li{
+        font-size: 8px;
+    }
+    .con h1{
+        font-size: 20px;
+    }
+    .con p{
+        font-size: 6px;
+    }
+    .con .but button{
+        width: 25%;
+        margin-top: 5px;
+        font-size: 8px;
+    }
+    .con .but .container .wrapper{
+        height: 50px;
+        width: 100%;
+        border-radius: 10px;
+    }
+     .con .but .container .wrapper .icon{
+        font-size: 25px;
+     }
+     .con .but .container .wrapper .text{
+        font-size: 5px;
+        font-weight: 300;
+     }
+     .con .but .container .wrapper #cancel-btn{
+        right: 5px;
+        top: 2px;
+        font-size: 10px;
+     }
+     .con .but .container .wrapper .file-name{
+        font-size: 5px;
+     }
+     .con .but .container #custom-btn{
+        width: 100%;
+        height: 15px;
+        font-size: 6px;
+     }    
+}
