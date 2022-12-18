@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Gayatri_Studio/CSS/home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Gayatri_Studio</title>
+    <script src="https://kit.fontawesome.com/5908aa3c09.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="header">
+        <div class="logo">
+            <h1>Gayatri Studio</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#home">About</a></li>
+                <li><a href="#home">Services</a></li>
+                <li><a href="#home">Contact Us</a></li>
+                <!-- <li><i class="fa fa-align-right"></i></li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="con">
+            <h1><span id="type"class="auto_type"></span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eum enim quas, rem mollitia pariatur et commodi
+                officiis. Culpa quis cupiditate iure tenetur recusandae nihil ipsum ipsa incidunt quia inventore.</p>
+                <p><b>Upload your photo here...</b></p>
+                <div class="but">
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="image">
+                                <img src=" " alt="">
+                            </div>
+                            <div class="cont">
+                                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                <div class="text">No file chosen, yet!</div>
+                            </div>
+                            <div id="cancel-btn"><i class="fas fa-times"></i></div>
+                            <div class="file-name">File name here</i></div>
+                        </div>
+                        <input id="default-btn" type="file" hidden>
+                        <button onclick="defaultBtnActive()" id="custom-btn">Choose Image</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed=new Typed("#type",{
+            strings: ["Have a good day...","May I help you ?","You can edit your photos here.","Come contact us."],
+            typeSpeed:25,
+            backSpeed:25,
+            loop:true
+        })
+        const wrapper=document.querySelector(".wrapper");
+        const fileName=document.querySelector(".file-name");
+        const cancelBtn=document.querySelector("#cancel-btn");
+        const defaultBtn=document.querySelector("#default-btn");
+        const customBtn=document.querySelector("#custom-btn");
+        const img=document.querySelector("img");
+        let regExp= /[0-9a-zA-Z\^\&\`\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_]+$/;
+        function defaultBtnActive(){
+            defaultBtn.click();
+        }
+        defaultBtn.addEventListener("change",function(){
+            const file =this.files[0];
+            if(file){
+                const reader=new FileReader();
+                reader.onload=function(){
+                const result=reader.result;
+                img.src=result;
+                wrapper.classList.add("active");
+            }
+            cancelBtn.addEventListener("click", function(){
+                img.src="";
+                wrapper.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+            }
+            if(this.value){
+                let valueStore = this.value.match(regExp);
+                fileName.textContent=valueStore;
+            }
+        })
+    </script>
+</body>
+
+</html>
